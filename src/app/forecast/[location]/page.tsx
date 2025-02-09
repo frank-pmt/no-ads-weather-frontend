@@ -1,12 +1,10 @@
 'use client'
 
 import ForecastComponent from "@/components/forecast-component";
-import ForecastPage from "@/components/forecast-component";
 import { SearchBar } from "@/components/search-bar";
 import { WeatherIcon } from "@/components/weather-icon";
 import { weatherService } from "@/services/weather-service";
 import { ForecastItem } from "@/types/forecast-item";
-import { DailyWeatherResponse } from "@/types/weather-response";
 import { decodeLocation } from "@/utils/encode-utils";
 import { ChevronLeft, Home, Loader2 } from "lucide-react";
 import { useParams } from "next/navigation";
