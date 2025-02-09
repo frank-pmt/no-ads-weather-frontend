@@ -7,6 +7,13 @@ export function formatHoursOf(date: Date): string {
     return date.toLocaleTimeString('en-US', { hour: 'numeric' });
 }
 
+export function formatLocaleDayAndMonth(date: Date, locale: string): string {
+    return date.toLocaleDateString(locale ? locale : 'en-US', {
+        month: 'long',
+        day: 'numeric'
+    })
+}
+
 export function formatLocaleDate(date: Date, locale: string): string {
     return date.toLocaleDateString(locale ? locale : 'en-US', {
         weekday: 'long',
@@ -25,5 +32,11 @@ export function formatLocaleDateShort(date: Date, locale: string): string {
 export function formatLocaleDayOfWeek(date: Date, locale: string): string {
     return date.toLocaleDateString(locale ? locale : 'en-US', {
         weekday: 'long'
+    })
+}
+
+export function formatLocaleDayOfWeekShort(date: Date, locale: string): string {
+    return date.toLocaleDateString(locale ? locale : 'en-US', {
+        weekday: 'short'
     })
 }

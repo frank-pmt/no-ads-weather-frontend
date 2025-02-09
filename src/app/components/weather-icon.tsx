@@ -32,7 +32,7 @@ export function WeatherIcon({code}: {code: string | null}) {
                 Icon = <CloudRain color="#4682B4" size={40}/>;
                 break;
             case 'thunderstorm':
-                Icon = <Zap color="FFD700" size={40}/>;
+                Icon = <Zap color="#FFD700" size={40}/>;
                 break;
             default:
                 Icon = <Empty/>;
