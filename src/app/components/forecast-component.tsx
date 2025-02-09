@@ -1,9 +1,8 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
-import { Loader2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ForecastItem } from '@/types/forecast-item';
-import { DailyWeatherResponse } from '@/types/weather-response';
 import { SimpleLineChart } from './simple-line-chart';
 import {
     Chart as ChartJS,
@@ -17,7 +16,7 @@ import {
 } from 'chart.js/auto';
 import WeatherCard from './weather-card';
 import HourlyWeatherCard from './hourly-weather-card';
-import { formatAsIsoDate, formatLocaleDate, formatLocaleDateShort, formatLocaleDayAndMonth } from '@/utils/date-utils';
+import { formatAsIsoDate, formatLocaleDayAndMonth } from '@/utils/date-utils';
 import { weatherService } from '@/services/weather-service';
 import { settingsService } from '@/services/settings-service';
 
@@ -105,7 +104,7 @@ const ForecastComponent = ({ location, forecast, showChart }: ForecastProps) => 
         setVisibleItems(forecast.slice(currentIndex, currentIndex + 3));
         setMaxMobileIndex(forecast.length - 3);
         setLoading(false);
-    }, [location, forecast])
+    }, [location, forecast, currentIndex])
 
     if (loading) {
         return (<div></div>)
